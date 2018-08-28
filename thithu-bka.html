@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Vào thi</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/dangnhap.css">
+	<link rel="stylesheet" href="css/dangki.css">
+	<link rel="stylesheet" href="css/panel.css">
+	<link rel="stylesheet" href="css/button.css">
+	<link rel="stylesheet" href="Admin/quanlinguoidung.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/menu.js"></script>
+	<script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
+	<script src="js/script_trangchu.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/addnew.js"></script>
+	<script src="js/thithu.js"></script>
+</head>
+<body class="">
+	<div class="modal fade" id="modal-id15">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<legend>
+						<p>Cập nhật thông tin tài khoản </p>
+						</legend>
+						<div class="col-xs-12" style="text-align: center;margin-bottom: 15px;">
+							<img src="images/anh1.jpg" class="" alt="Image" style="width: 80px;height: 80px;margin-right: 10px;">
+						</div>
+						<form id="formupdate" action="update-info.php" method="POST" enctype="multipart/form-data">
+						<div class="form-group col-xs-12">
+							<label for="">Họ và tên</label>
+							<input type="text" name="fullName" class="form-control" id="cn_hoten">
+							<p id="cb_hoten_cn" style="color: red;font-weight: bold;"></p>
+							<label for="">Email</label>
+							<input type="email" name="email" class="form-control" id="cn_email">
+							<p id="cb_email_cn" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Ngày sinh</label>
+							<input type="date" name="birthday" class="form-control" id="cn_ngaysinh">
+							<script>
+								webshims.setOptions('forms-ext', {types: 'date'});
+								webshims.polyfill('forms forms-ext');
+								$.webshims.formcfg = {
+								en: {
+									    dFormat: '-',
+									    dateSigns: '-',
+									    patterns: {
+									        d: "dd-mm-yy"
+									    }
+									}
+								};
+							</script>
+							<label for="">Mật khẩu cũ</label>
+							<input type="password" name="password" class="form-control" id="cu_password">
+							<p id="cb_password_cu" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Mật khẩu mới</label>
+							<input type="password" name="npass" class="form-control" id="cn_password">
+							<p id="cb_password_cn" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Nhập lại mật khẩu mới</label>
+							<input type="password" name="rnpass" class="form-control" id="cn_password2" >
+							<p id="cb_password_cn2" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Ảnh đại diện mới</label>
+							<input type="file" name="avarta" class="form-control">
+						</div>
+						<input type="submit" name="bsubmit" id="usubmit" style="display: none;">
+						<button type="button" data-loading-text="Loading..." class="btn btn-primary" id="" onclick="check_capnhat()">Cập nhật thông tin</button>
+						</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id7">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<form action="upload.php" method="POST" role="form" enctype="multipart/form-data">
+					<legend>Đăng tài liệu</legend>
+				
+					<div class="form-group">
+						<div style="width: 50%;float: left;">
+							<label for="">Môn học</label><br>
+							<select name="monhoc">
+								<option value="toan" selected="">Toán</option>
+								<option value="vatly" >Vật lí</option>
+								<option value="hoahoc" >Hóa học</option>
+								<option value="tienganh" >Tiếng Anh</option>
+							</select>
+						</div>
+						<div style="width: 50%;float: left;">
+							<label for="">Chủ đề</label><br>
+							<select name="chude">
+								<option value="luyenthi" >Chuyên đề luyện thi</option>
+								<option value="thithu" >Đề thi thử</option>
+								<option value="cautruyen">Câu chuyện toán học</option>
+							</select>
+						</div>
+						<br>
+						<label for="">Tên tài liệu</label>
+						<input type="text" class="form-control" name="doc-name" id="" placeholder="Tên tài liệu">
+						<label for="">Mô tả</label>
+						<input type="text" class="form-control" name="doc-info" id="" placeholder="Mô tả">
+						<label for="">Hình ảnh</label><br>
+						<input type="file" class="form-control" name="doc-img">
+						<label for="">Upload File</label><br>
+						<input type="file" class="form-control" name="doc-file">
+					</div>
+					<button type="submit" name="submit" class="btn btn-primary">Đăng tài liệu</button>
+				</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id6" style="z-index: 2500">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<form action="reset-password.php" method="POST" role="form">
+						<legend>Quên mật khẩu</legend>
+					
+						<div class="form-group">
+							<label for="">Email đăng kí tài khoản</label>
+							<input type="email" name="email" class="form-control" id="" placeholder="bigtrym.ml@gmail.com">
+						</div>
+						<input type="hidden" name="current_page" id="redirect">
+						<script type="text/javascript">$('#redirect').attr('value', encodeURI(document.location.href));</script>
+						<button type="submit" name="submit" class="btn btn-primary">Lấy lại mật khẩu</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id" style="z-index: 1500">
+		<div class="modal-dialog">
+			<form class="form-3" method="POST" action="login.php">
+					
+			    <p class="clearfix">
+			        <label for="login">Username</label>
+			        <input type="text" name="username" id="username" placeholder="Username">
+			    </p>
+			    <p class="clearfix">
+			        <label for="password">Password</label>
+			        <input type="password" name="password" id="password" placeholder="Password">
+			    </p>
+			    <p class="clearfix">
+			        <input type="checkbox" name="remember" id="remember">
+			        <label for="remember">Remember me</label>
+			    </p>
+			    <p class="clearfix"><a data-toggle="modal" href='#modal-id6' style="color: blue;">Quên mật khẩu</a></p>
+			    <p class="clearfix">
+			    	<input type="hidden" name="current_page" id="current_page">
+					<script type="text/javascript">$('#current_page').attr('value', encodeURI(document.location.href));</script>
+				</p>
+			    <p class="clearfix">
+
+			        <input type="submit" name="submit" value="Đăng nhập">
+			    </p>
+			</form>					
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id2">
+		<div class="modal-dialog">
+			<form id="msform" action="signup.php" method="POST" enctype="multipart/form-data">
+			<!-- Progressbar -->
+				<ul id="progressbar" style="text-align: center;">
+				    <li class="active">Đăng kí tài khoản</li>
+				    <li>Thông tin cá nhân</li>
+				    <li>Xác nhận</li>
+				</ul>
+			 
+			<!-- fieldset -->
+				<fieldset>
+					<h2 class="fs-title">Đăng kí tài khoản</h2>
+					<p style="text-align: left;font-weight: bold;color: red">Username</p>
+					<input type="text" name="username" placeholder="Username" required />
+					<p style="text-align: left;font-weight: bold;color: red">Mật khẩu</p>
+					<input type="password" name="password" placeholder="Mật khẩu" required />
+					<p style="text-align: left;font-weight: bold;color: red	">Xác nhận mật khẩu</p>
+					<input type="password" name="cpassword" placeholder="Xác nhận mật khẩu"  required/>
+					<p></p>
+					<input type="submit" name="next" class="next action-button" value="Tiếp" />
+				</fieldset>
+					 
+				<fieldset>
+					<h2 class="fs-title">Thông tin cá nhân</h2>
+					<p style="text-align: left;font-weight: bold;color: red">Họ và tên</p>
+					<input type="text" name="fullName" placeholder="Họ và tên" required />
+					<p style="text-align: left;font-weight: bold;color: red">Email</p>
+					<input type="text" name="email" placeholder="Email"  required/>
+					<p style="text-align: left;font-weight: bold;color: red">Ngày sinh</p>
+					<input type="date" name="birthday">
+					<p style="text-align: left;font-weight: bold;clear: both;color: red">Ảnh đại diện</p>
+					<input type="file" name="avarta" onchange="readURL(this);">
+					<input type="button" name="previous" class="previous action-button" value="Quay lại" />
+					<input type="button" name="next" class="next action-button" value="Tiếp" />
+				</fieldset>
+			 
+				<fieldset>
+					<h2 class="fs-title">Xác nhận thông tin</h2>
+					<table class="table table-hover" style="text-align: left;">	
+							<tr>
+								<th>Username</th>
+								<td>arsenal_nt97</td>
+							</tr>
+							<tr>
+								<th>Họ và tên</th>
+								<td>Nguyễn Ngọc Trung</td>
+							</tr>
+							<tr>
+								<th>Email</th>
+								<td>trungnn160697@gmail.com</td>
+							</tr>
+							<tr>
+								<th>Ngày sinh</th>
+								<td>16/06/1997</td>
+							</tr>
+							<tr>
+								<th style="vertical-align: middle;">Ảnh đại diện</th>
+								<td><img src="images/anh11.jpg" alt="" style="width: 80px;height: 80px"></td>
+							</tr>
+					</table>
+					<input type="button" name="previous" class="previous action-button" value="Quay lại" />
+					<input type="submit" name="next" class="submit action-button" value="Đăng kí" />
+				</fieldset>
+			 
+			</form>
+
+		</div>
+	</div>
+	<div class="header col-xs-12">
+		<div class="logo col-xs-12 col-md-6 col-sm-6 col-lg-7">
+			<img src="images/bygtrym.png" class="img-responsive" alt="Image" style="margin-top: 10px">
+		</div>
+		<div class="log-sign col-xs-12 col-md-6 col-sm-6 col-lg-5">
+			<ul class="col-xs-12" id="log-sign" style="display: none;">
+				<li><a  data-toggle="modal" href='#modal-id2'><i class="fa fa-user" aria-hidden="true"></i><span>Đăng kí</span></a></li>
+				<li><a data-toggle="modal" href='#modal-id' ><i class="fa fa-sign-in fa" aria-hidden="true"></i><span>Đăng nhập</span></a></li>		
+			</ul>
+			<div class="col-xs-12" id="login">
+	    		<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="line-height: 40px"><span>Nguyễn Ngọc Trung</span><b class="caret"></b><img src="images/anh1.jpg" class="img-responsive" alt="Image" style="width: 40px;height: 40px;float: left;margin-right: 10px;"></a>
+						<ul class="dropdown-menu">
+							<li><a  data-toggle="modal" href='#modal-id15'>Sửa thông tin</a></li>
+							<li><a data-toggle="modal" href='#modal-id7'>Đăng tài liệu</a></li>
+							<li><a href="Admin/Admin.html">Quản lý</a></li>
+							<li><a href="#">Thoát</a></li>
+						</ul>
+					</li>
+				</ul>
+	    	</div>
+		</div>
+	</div>
+	<div class="clearfix menu" >
+	    <ul class="clearfix">
+	        <li><a href=".">Trang chủ</a></li>
+	        <li><a href="toanhoc.html">Toán học</a></li>
+	        <li><a href="vatli.html">Vật lí</a></li>
+	        <li><a href="hoahoc.html">Hóa học</a></li>
+	        <li><a href="thithu.html">Thi thử</a></li>
+	        <li><a href="info/info.html">Thông tin</a></li>
+	    </ul>
+	    <a href="#" id="pull">Menu</a>
+	</div>
+	<div class="main">
+		<div id="lest-go">
+			<div class="type-1" style="">
+	 			<div>
+	 				<div class="col-xs-12" id="chon">
+				    		<span style="">Lựa chọn môn học</span>
+					    	<select style="" id="lua-chon">
+					    		<option value="0">----Chọn----</option>
+					    		<option value ="toanhoc">Toán học</option>
+					    		<option value="vatli">Vật lí</option>
+					    		<option value="hoahoc">Hóa học</option>
+					    	</select>
+				    	</div>
+				    <button  id="start" >
+				    	
+				    	<span style="margin-right: 10px">Bắt đầu</span>
+				      	<span ><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+				    </button>
+	  			</div>
+			</div>
+			<img src="images/bia.jpg" class="" alt="Image" style="width: 100%;height: 500px;position: relative;z-index:10;">
+		</div>
+		<div id="thithu">
+			<h1 style="color: orange;">ĐỀ THI LỚP VIỆT NHẬT C - K60 </h1>
+			<form name="cd" style="text-align: center;">
+				<input id="txt" readonly="true" type="text" value="60" border="0" name="disp">
+			</form>
+			<script language="javascript">
+// Created by: Neill Broderick :: http://www.bespoke-software-solutions.co.uk/downloads/downjs.php
+				var mins
+				var secs;
+
+				function cd() {
+				 	mins = 1 * m("90"); // change minutes here
+				 	secs = 0 + s(":01"); // change seconds here (always add an additional second to your total)
+				 	redo();
+				}
+
+				function m(obj) {
+				 	for(var i = 0; i < obj.length; i++) {
+				  		if(obj.substring(i, i + 1) == ":")
+				  		break;
+				 	}
+				 	return(obj.substring(0, i));
+				}
+
+				function s(obj) {
+				 	for(var i = 0; i < obj.length; i++) {
+				  		if(obj.substring(i, i + 1) == ":")
+				  		break;
+				 	}
+				 	return(obj.substring(i + 1, obj.length));
+				}
+
+				function dis(mins,secs) {
+				 	var disp;
+				 	if(mins <= 9) {
+				  		disp = " 0";
+				 	} else {
+				  		disp = " ";
+				 	}
+				 	disp += mins + ":";
+				 	if(secs <= 9) {
+				  		disp += "0" + secs;
+				 	} else {
+				  		disp += secs;
+				 	}
+				 	return(disp);
+				}
+
+				function redo() {
+				 	secs--;
+				 	if(secs == -1) {
+				  		secs = 59;
+				  		mins--;
+				 	}
+				 	document.cd.disp.value = dis(mins,secs); // setup additional displays here.
+				 	if((mins == 0) && (secs == 0)) {
+				  		window.alert("Time is up. Press OK to continue."); // change timeout message as required
+				  		// window.location = "yourpage.htm" // redirects to specified page once timer ends and ok button is pressed
+				 	} else {
+				 		cd = setTimeout("redo()",1000);
+				 	}
+				}
+
+				function init() {
+				  cd();
+				}
+				window.onload = init;
+			</script>
+	<!--
+    	This script downloaded from www.JavaScriptBank.com
+    	Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
+	-->
+
+			<!-- <form action="" style="padding-top: 15px"> -->
+				<div style="" id="bangdiem">
+						<div class="table-responsive">
+							<table class="table table-hover">
+								<thead>
+									<tr >
+										<th>Username</th>
+										<th>Họ và tên</th>
+										<th>Số câu đúng</th>
+										<th>Số câu sai</th>
+										<th>Điểm</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Arsenal.nt97</td>
+										<td>Nguyễn Ngọc Trung</td>
+										<td>50</td>
+										<td>0</td>
+										<td>10</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				<div class="col-xs-12" style="font-size: 16px;">
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 1:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" name="1" style="margin-right: 10px"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="1"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="1"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="1"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 2:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="2"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="2"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="2"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="2"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 3:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="3"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="3"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="3"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="3"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 4:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="4"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="4"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="4"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="4"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 5:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="5"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="5"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="5"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="5"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 6:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="6"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="6"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="6"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="6"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 7:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="7"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="7"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="7"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="7"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 8:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="8"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="8"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="8"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="8"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 9:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="9"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="9"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="9"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="9"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<div class="col-xs-12">
+						<p><b style="color: #33CCCC;font-size: 20px;margin-right: 10px">Câu 10:</b>Ai đẹp trai nhất Việt Nhật C - K60</p>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="10"></input>A.Nguyễn Ngọc Trung</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="10"></input>B.MSSV 20153979</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="10"></input>C.Bạn Thạch Thất</span>
+						<span class="col-xs-12 col-md-6"><input type="radio" style="margin-right: 10px" name="10"></input>D.Cả 3 đáp án trên</span>
+					</div>
+					<button  id="end" >	
+				    	<span style="margin-right: 10px">Nộp bài</span>
+				      	<span ><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+				    </button>
+					<div style="clear: both;" >
+				        <ul class="pagination" id="page">
+					        <li class="disabled"><a href="#">&laquo;</a></li>
+					        <li class="active"><a href="#" >1 <span class="sr-only">(current)</span></a></li>
+					        <li class=""><a href="#">2</a></li>
+				         	<li><a href="#">3</a></li>
+				         	<li><a href="#">4</a></li>
+				         	<li><a href="#">5</a></li>
+				            <li><a href="#">&raquo;</a></li>
+				      </ul>
+        			</div>
+        			
+				</div>
+
+			</div>
+			<!-- </form> -->
+		</div>
+		
+
+	<div style="width: 100%;clear: both;">
+		<footer class="myfooter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-xs-12">
+						<h4 class="title-widget">MẠNG XÃ HỘI</h4>
+						<p>Các bạn có thể liên hệ với chúng tôi thông qua các trang mạng xã hội </p>
+						<ul class="social social-circle">
+							<li> <a href="https://www.facebook.com/" class="icoFacebook"><i class="fa fa-facebook"></i></a></li>
+							<li> <a href="https://twitter.com" class="icoTwitter"> <i class="fa fa-twitter"></i> </a> </li>
+							<li> <a href="https://www.instagram.com" class="icoGoogle"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
+							<li> <a href="https://www.youtube.com/" class="icoRss"> <i class="fa fa-youtube"></i> </a> </li>
+						</ul>
+					</div>
+					
+					<div class="col-sm-4 col-xs-12">
+						<h4 class="title-widget">Menu</h4>
+						<div class="category">
+							<a href="." class="zoom">Trang chủ</a>
+							<a href="toanhoc.html" class="zoom">Toán học</a>
+							<a href="vatli.html" class="zoom">Vật lí</a>
+							<a href="hoahoc.html" class="zoom">Hóa học</a>
+							<a href="thithu.html" class="zoom">Thi thử</a>
+							<a href="info/info.html" class="zoom">Thông tin</a>
+						</div>
+					</div>
+				</div>
+				<hr>
+				
+				<div class="row text-center"> © 20171 - Designer NNT</div>
+			</div> <!-- ./container -->
+	    
+	    
+	    
+	    </footer>
+   
+	</div>
+	
+</body>
+<script>
+	(function($) {
+	    "Sun Fantastic";
+	    function count($this) {
+	        var current = parseInt($this.html(), 10);
+	        current = current + 1;
+	        $this.html(++current);
+	        if (current > $this.data('count')) {
+	            $this.html($this.data('count'))
+	        } else {
+	            setTimeout(function() {
+	                count($this)
+	            }, 30) // Tốc độ đếm số, số 1 là nhanh nhất
+	        }
+	    }
+	    $(".stat-count").each(function() {
+	        $(this).data('count', parseInt($(this).html(), 10));
+	        $(this).html('0');
+	        count($(this))
+	    })
+	})(jQuery);
+</script>
+<script type="text/javascript">
+	$.ajax({url: "check-logged.php", success: function(result){
+		if (result.length > 6) {
+			var user = JSON.parse(result);
+			$('#login').show();
+			$('#log-sign').hide();
+			
+			$('li.dropdown img').attr('src', 'avarta/' + user.image );
+			$('.modal-header img').attr('src', 'avarta/' + user.image );
+			$('li.dropdown span').html(user.fullName);
+			$('#formupdate input:eq(0)').val(user.fullName) ;
+			$('#formupdate input:eq(1)').val(user.email);
+			$('#formupdate input:eq(2)').val(user.birth);
+			$("ul.dropdown-menu li:eq(3) a").attr('href', "logout.php");
+			$.ajax({url: 'check-logged.php?isadmin', success: function(result) {
+				(result == '0')?$("ul.dropdown-menu li:eq(2)").hide():$("ul.dropdown-menu li:eq(2) a").attr('href', 'Admin/Admin.php');
+			}});
+		}else{
+			$('#log-sign').show();
+		}
+	}});
+</script>	
+
+<script>
+		var current_fs,next_fs,previous_fs; // fields set
+		var left,opacity,scale; //fieldset properties which we will animate
+		var animating; //flag to prevent quick multi-click glitches
+		var blank = "";
+		function validUserPassword(argument) {
+			var username = $('fieldset input:eq(0)').val();
+			var password = $('fieldset input:eq(1)').val();
+			var rpassword = $('fieldset input:eq(2)').val();
+			if(	"" ==  username|| 
+				"" == password ||
+				"" == rpassword ||
+				password.length < 6 ||
+				password.length < 6 ||
+				rpassword != password ){
+		 		return true;
+			}
+			return false;
+		 } 
+		 function validNameEmailBirth(argument) {
+		 	var fullName = $('fieldset:eq(1) input:eq(0)').val();
+		 	var email = $('fieldset:eq(1) input:eq(1)').val();
+		 	var birthday = $('fieldset:eq(1) input:eq(2)').val();
+		 	if(fullName == "" ||
+		 		email == ""	||
+		 		birthday ==""){
+		 		return true;
+		 	}
+		 	return false;
+		 }
+		$('.next').click(function(){
+			var fieldsetIndex = $("#msform fieldset").index($(this).parent());
+			if(fieldsetIndex == 0){
+			 	if(validUserPassword())
+					return false;
+			}
+			if(fieldsetIndex == 1){
+				if(validNameEmailBirth())
+					return false;
+				$('fieldset:eq(2) td:eq(0)').html($('fieldset input:eq(0)').val());
+				$('fieldset:eq(2) td:eq(1)').html($('fieldset:eq(1) input:eq(0)').val());
+				$('fieldset:eq(2) td:eq(2)').html($('fieldset:eq(1) input:eq(1)').val());
+				$('fieldset:eq(2) td:eq(3)').html($('fieldset:eq(1) input:eq(2)').val());
+			}
+		    if(animating) return false
+		    animating = true;
+		    current_fs = $(this).parent();
+		    next_fs = $(this).parent().next();
+		    //activate next step on progressbar using the index of next_fs
+		    $("#progressbar li").eq($("#msform fieldset").index(next_fs)).addClass("active");
+		    next_fs.show(); //show the next fieldset
+		    // hide the current field set with style
+		    current_fs.animate({opacity:0},{
+		        step:function(now,fx){
+		            //1. scale current_fs down to 80%, now = 0 (same as opacity = 0)
+		            scale = 1 - (1- now)*0.2;
+		            //2. bring next_fs from the right(50%)
+		            left = (now* 50)+ "%";
+		            //3. increase opacity of next_fs to 1 as it moves in
+		            opacity = 1 - now;
+		            current_fs.css({'transform':'scale('+scale+')'});
+		            next_fs.css({'left':left,'opacity':opacity});
+		        },
+		        duration:800,
+		        complete:function(){
+		            current_fs.hide();
+		            animating = false;
+		        },
+		        //this comes from the custom easing plugin
+		        easing: 'easeInOutBack'
+		    });
+		 
+		});
+		 
+		$('.previous').click(function(){
+		 
+		    if(animating) return false
+		    animating = true;
+		 
+		    current_fs = $(this).parent();
+		    previous_fs = $(this).parent().prev();
+		    $('#progressbar li').eq($("#msform fieldset").index(current_fs)).removeClass("active");
+		    previous_fs.show();
+		    //hide the current fieldset with style
+		    current_fs.animate({opacity: 0}, {
+		        step: function(now, mx) {
+		            //as the opacity of current_fs reduces to 0 - stored in "now"
+		            //1. scale previous_fs from 80% to 100%
+		            scale = 0.8 + (1 - now) * 0.2;
+		            //2. take current_fs to the right(50%) - from 0%
+		            left = ((1-now) * 50)+"%";
+		            //3. increase opacity of previous_fs to 1 as it moves in
+		            opacity = 1 - now;
+		            current_fs.css({'left': left});
+		            previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+		        },
+		        duration: 800,
+		        complete: function(){
+		            current_fs.hide();
+		            animating = false;
+		        },
+		        //this comes from the custom easing plugin
+		        easing: 'easeInOutBack'
+		    });
+		});
+		 
+		// $('.submit').click(function(){
+		//     return false;
+		// });
+		function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+	            reader.onload = function (e) {
+	                $('fieldset:eq(2) img')
+	                    .attr('src', e.target.result)
+	                    .width(80)
+	                    .height(80);
+	            };
+
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+	    // alert($('fieldset:eq(2) img').attr('src'));
+	</script>
+</html>
+<!-- https://codepen.io/atakan/pen/gqbIz -->

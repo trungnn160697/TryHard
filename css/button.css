@@ -1,0 +1,61 @@
+/*
+* @Author: ngoc trung
+* @Date:   2017-11-07 16:53:56
+* @Last Modified by:   ngoc trung
+* @Last Modified time: 2017-11-07 19:57:45
+*/
+#start{
+	background: #DD0000;
+	font-weight: bold;
+	color:white;
+	border: 0;
+	width: 200px;height: 50px;font-size: 20px;
+	border-radius: 15px;
+	margin-left: 60px;
+	
+}
+#end{
+	background: #3399FF	;
+	font-weight: bold;
+	color:white;
+	border: 0;
+	margin-top:20px;
+	margin-bottom: 20px;
+	width: 200px;height: 50px;font-size: 20px;
+	border-radius: 15px;
+	margin-left: 260px;
+}
+.type-1{
+	z-index: 100;position: absolute;margin-top:150px;margin-left: 500px
+}
+#bangdiem{
+	width: 70%;
+	margin: 0 auto;
+	margin-left: 40px;
+	display: none;
+}
+#thithu{
+	width: 80%;
+	margin: 50px 300px;
+	display: none;
+}
+#page{
+	margin-left: 200px;
+}
+
+#txt {
+  border:none;
+  font-family:verdana;
+  font-size:16pt;
+  font-weight:bold;
+  border-right-color:#FFFFFF
+}
+#chon{
+	margin-bottom: 10px;
+}
+#chon span{
+	color: white;font-size:20px;margin-right: 10px;
+}
+#chon select{
+	width: 100px;font-size: 16px;
+}

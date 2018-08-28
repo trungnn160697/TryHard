@@ -1,0 +1,26 @@
+/*
+* @Author: ngoc trung
+* @Date:   2017-12-07 08:49:25
+* @Last Modified by:   ngoc trung
+* @Last Modified time: 2017-12-07 09:24:47
+*/
+.search{
+	width: 80%;
+	margin: 20px auto;
+}
+#ketqua{
+	font-size:30px;
+	font-weight: bold;
+	color: red;
+}
+.label-action{
+	width: 50px;
+}
+
+table a:hover{
+	text-decoration: none;
+	color:blue;
+}
+a{
+	color:black
+}

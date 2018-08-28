@@ -1,0 +1,38 @@
+<head>
+<base target="_top">
+<meta charset="utf-8">
+ <style type="text/css">
+
+.blgviewcounter{
+	padding:6px 8px;
+	border: 1px solid #807D7D;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0px 0px 10px #343434;
+	font-size: 150%;
+};
+img{
+	border: 0px;
+};
+ </style>
+ <title>Url or Search</title>
+ </head>
+ <body>
+<center>
+<br><br><br>
+<img src="image-data/google.png"><br>
+<form method="get" action="https://www.google.com/search">
+<input name="q" class="blgviewcounter" type="search"  placeholder="Tìm kiếm với Google."  style="outline: none; height: 40px; width: 557px;">
+<br><br><br><br>
+<table width = "60%" style="text-align:center">
+<tr>
+<td><a href = "https://www.facebook.com"><img src= "image-data/icon_facebook.png" ></a></td>
+<td><a href = "https://www.google.com"><img src= "image-data/icon_google.png" /></a></td>
+<td><a href = "https://www.youtube.com"><img src= "image-data/icon_youtube.png" /></a></td>
+<td><a href = "https://www.apple.com"><img src = "image-data/icon_apple.png" /></a></td>
+<td><a href = "https://www.wikipedia.com"><img src = "image-data/icon_wiki.png"/></a></td>
+</tr>
+</table>
+</form>
+</center>
+</body>

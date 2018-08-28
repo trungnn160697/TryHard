@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Trang chủ</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/dangnhap.css">
+	<link rel="stylesheet" href="css/dangki.css">
+	<link rel="stylesheet" href="css/panel.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/menu.js"></script>
+	<script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
+	<script src="js/script_trangchu.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/addnew.js"></script>
+</head>
+<body class="">
+	<div class="modal fade" id="modal-id15">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<legend>
+						<p>Cập nhật thông tin tài khoản </p>
+						</legend>
+						<div class="col-xs-12" style="text-align: center;margin-bottom: 15px;">
+							<img src="images/anh1.jpg" class="" alt="Image" style="width: 80px;height: 80px;margin-right: 10px;">
+						</div>
+						<form id="formupdate" action="update-info.php" method="POST" enctype="multipart/form-data">
+						<div class="form-group col-xs-12">
+							<label for="">Họ và tên</label>
+							<input type="text" name="fullName" class="form-control" id="cn_hoten">
+							<p id="cb_hoten_cn" style="color: red;font-weight: bold;"></p>
+							<label for="">Email</label>
+							<input type="email" name="email" class="form-control" id="cn_email">
+							<p id="cb_email_cn" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Ngày sinh</label>
+							<input type="date" name="birthday" class="form-control" id="cn_ngaysinh">
+							<script>
+								webshims.setOptions('forms-ext', {types: 'date'});
+								webshims.polyfill('forms forms-ext');
+								$.webshims.formcfg = {
+								en: {
+									    dFormat: '-',
+									    dateSigns: '-',
+									    patterns: {
+									        d: "dd-mm-yy"
+									    }
+									}
+								};
+							</script>
+							<label for="">Mật khẩu cũ</label>
+							<input type="password" name="password" class="form-control" id="cu_password">
+							<p id="cb_password_cu" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Mật khẩu mới</label>
+							<input type="password" name="npass" class="form-control" id="cn_password">
+							<p id="cb_password_cn" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Nhập lại mật khẩu mới</label>
+							<input type="password" name="rnpass" class="form-control" id="cn_password2" >
+							<p id="cb_password_cn2" class="cb" style="color: red;font-weight: bold;"></p>
+							<label for="">Ảnh đại diện mới</label>
+							<input type="file" name="avarta" class="form-control">
+						</div>
+						<input type="submit" name="bsubmit" id="usubmit" style="display: none;">
+						<button type="button" data-loading-text="Loading..." class="btn btn-primary"  onclick="check_capnhat()">Cập nhật thông tin</button>
+						</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id7">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<form action="upload.php" method="POST" role="form" enctype="multipart/form-data">
+					<legend>Đăng tài liệu</legend>
+				
+					<div class="form-group">
+						<div style="width: 50%;float: left;">
+							<label for="">Môn học</label><br>
+							<select name="monhoc">
+								<option value="toan" selected="">Toán</option>
+								<option value="vatly" >Vật lý</option>
+								<option value="hoahoc" >Hóa học</option>
+							</select>
+						</div>
+						<div style="width: 50%;float: left;">
+							<label for="">Chủ đề</label><br>
+							<select name="chude">
+								<option value="luyenthi" >Chuyên đề luyện thi</option>
+								<option value="thithu" >Đề thi thử</option>
+								<option value="cautruyen">Câu chuyện toán học</option>
+							</select>
+						</div>
+						<br>
+						<label for="">Tên tài liệu</label>
+						<input type="text" class="form-control" name="doc-name"  placeholder="Tên tài liệu">
+						<label for="">Mô tả</label>
+						<input type="text" class="form-control" name="doc-info"  placeholder="Mô tả">
+						<label for="">Hình ảnh</label><br>
+						<input type="file" class="form-control" name="doc-img">
+						<label for="">Upload File</label><br>
+						<input type="file" class="form-control" name="doc-file">
+					</div>
+					<button type="submit" name="submit" class="btn btn-primary">Đăng tài liệu</button>
+				</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id6" style="z-index: 2500">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<form action="reset-password.php" method="POST" role="form">
+						<legend>Quên mật khẩu</legend>
+					
+						<div class="form-group">
+							<label for="">Email đăng kí tài khoản</label>
+							<input type="email" name="email" class="form-control"  placeholder="bigtrym.ml@gmail.com">
+						</div>
+						<button type="submit" name="submit" class="btn btn-primary">Lấy lại mật khẩu</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id" style="z-index: 1500">
+		<div class="modal-dialog">
+			<form class="form-3" method="POST" action="login.php">
+			    <p class="clearfix">
+			        <label for="login">Username</label>
+			        <input type="text" name="username" id="username" placeholder="Username">
+			    </p>
+			    <p class="clearfix">
+			        <label for="password">Password</label>
+			        <input type="password" name="password" id="password" placeholder="Password">
+			    </p>
+			    <p class="clearfix">
+			        <input type="checkbox" name="remember" id="remember">
+			        <label for="remember">Remember me</label>
+			    </p>
+			    <p class="clearfix"><a data-toggle="modal" href='#modal-id6'>Quên mật khẩu</a></p>
+			    <p class="clearfix">
+			        <input type="submit" name="submit" value="Đăng nhập">
+			    </p>
+			</form>		
+		</div>
+	</div>
+	<div class="modal fade" id="modal-id2">
+		<div class="modal-dialog">
+			<form id="msform" action="signup.php" method="POST" enctype="multipart/form-data">
+			<!-- Progressbar -->
+				<ul id="progressbar" style="text-align: center;">
+				    <li class="active">Đăng kí tài khoản</li>
+				    <li>Thông tin cá nhân</li>
+				    <li>Xác nhận</li>
+				</ul>
+			 
+			<!-- fieldset -->
+				<fieldset>
+					<h2 class="fs-title">Đăng kí tài khoản</h2>
+					<p style="text-align: left;font-weight: bold;color: red">Username</p>
+					<input type="text" name="username" placeholder="Username" required />
+					<p style="text-align: left;font-weight: bold;color: red">Mật khẩu</p>
+					<input type="password" name="password" placeholder="Mật khẩu" required />
+					<p style="text-align: left;font-weight: bold;color: red	">Xác nhận mật khẩu</p>
+					<input type="password" name="cpassword" placeholder="Xác nhận mật khẩu"  required/>
+					<p></p>
+					<input type="submit" name="next" class="next action-button" value="Tiếp" />
+				</fieldset>
+					 
+				<fieldset>
+					<h2 class="fs-title">Thông tin cá nhân</h2>
+					<p style="text-align: left;font-weight: bold;color: red">Họ và tên</p>
+					<input type="text" name="fullName" placeholder="Họ và tên" required />
+					<p style="text-align: left;font-weight: bold;color: red">Email</p>
+					<input type="text" name="email" placeholder="Email"  required/>
+					<p style="text-align: left;font-weight: bold;color: red">Ngày sinh</p>
+					<input type="date" name="birthday">
+					<p style="text-align: left;font-weight: bold;clear: both;color: red">Ảnh đại diện</p>
+					<input type="file" name="avarta" onchange="readURL(this);">
+					<input type="button" name="previous" class="previous action-button" value="Quay lại" />
+					<input type="button" name="next" class="next action-button" value="Tiếp" />
+				</fieldset>
+			 
+				<fieldset>
+					<h2 class="fs-title">Xác nhận thông tin</h2>
+					<table class="table table-hover" style="text-align: left;">	
+							<tr>
+								<th>Username</th>
+								<td>arsenal_nt97</td>
+							</tr>
+							<tr>
+								<th>Họ và tên</th>
+								<td>Nguyễn Ngọc Trung</td>
+							</tr>
+							<tr>
+								<th>Email</th>
+								<td>trungnn160697@gmail.com</td>
+							</tr>
+							<tr>
+								<th>Ngày sinh</th>
+								<td>16/06/1997</td>
+							</tr>
+							<tr>
+								<th style="vertical-align: middle;">Ảnh đại diện</th>
+								<td><img src="images/anh11.jpg" alt="" style="width: 80px;height: 80px"></td>
+							</tr>
+					</table>
+					<input type="button" name="previous" class="previous action-button" value="Quay lại" />
+					<input type="submit" name="next" class="submit action-button" value="Đăng kí" />
+				</fieldset>
+			 
+			</form>
+
+		</div>
+	</div>
+	<div class="header col-xs-12">
+		<div class="logo col-xs-12 col-md-6 col-sm-6 col-lg-7">
+			<img src="images/bygtrym.png" class="img-responsive" alt="Image" style="margin-top: 10px">
+		</div>
+		<div class="log-sign col-xs-12 col-md-6 col-sm-6 col-lg-5">
+			<ul class="col-xs-12" id="log-sign" style="display: none;">
+				<li><a  data-toggle="modal" href='#modal-id2'><i class="fa fa-user" aria-hidden="true"></i><span>Đăng kí</span></a></li>
+				<li><a data-toggle="modal" href='#modal-id' ><i class="fa fa-sign-in fa" aria-hidden="true"></i><span>Đăng nhập</span></a></li>		
+			</ul>
+			<div class="col-xs-12" id="login">
+	    		<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="line-height: 40px"><span>Nguyễn Ngọc Trung</span><b class="caret"></b><img src="images/anh1.jpg" class="img-responsive" alt="Image" style="width: 40px;height: 40px;float: left;margin-right: 10px;"></a>
+						<ul class="dropdown-menu">
+							<li><a  data-toggle="modal" href='#modal-id15'>Sửa thông tin</a></li>
+							<li><a data-toggle="modal" href='#modal-id7'>Đăng tài liệu</a></li>
+							<li><a href="Admin/Admin.php">Quản lý</a></li>
+							<li><a href="logout.php">Thoát</a></li>
+						</ul>
+					</li>
+				</ul>
+	    	</div>
+		</div>
+	</div>
+	<div class="clearfix menu" >
+	    <ul class="clearfix">
+	        <li><a href="./">Trang chủ</a></li>
+	        <li><a href="toanhoc.html">Toán học</a></li>
+	        <li><a href="vatli.html">Vật lí</a></li>
+	        <li><a href="hoahoc.html">Hóa học</a></li>
+	        <li><a href="thithu.html">Thi thử</a></li>
+	        <li><a href="info/info.html">Thông tin</a></li>
+	    </ul>
+	    <a href="#" id="pull">Menu</a>
+	</div>
+	<div class="main">
+		<div class="main-wapper" style="background-image: url('http://www.cedu24h.com/wp-content/uploads/2015/12/art_bg_counter1.png');background-repeat: no-repeat;">
+			<div class="content1">
+				<div class="number col-xs-4">
+					<p><i class="fa fa-users" aria-hidden="true"></i></p>
+					<div class="s-number stat-count" id="member-count">0</div> 
+					<p>THÀNH VIÊN</p>
+				</div>
+				<div class="number col-xs-4">
+					<p><i class="fa fa-file-text" aria-hidden="true"></i></i></p>
+					<div class="s-number stat-count" id="doc-count">0</div>
+					<p>TÀI LIỆU</p>
+				</div>
+				<div class="number col-xs-4">
+					<p><i class="fa fa-download" aria-hidden="true"></i></p>
+					<div class="s-number stat-count" id="download-count">0</div>
+					<p>LƯỢT TẢI</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			function count($ngu) {
+		        var current = parseInt($ngu.html(), 10);
+		       // alert(current);
+		        current = current + 1;
+		        $ngu.html(++current);
+		        if (current > $ngu.data('count')) {
+		            $ngu.html($ngu.data('count'))
+		        } else {
+		            setTimeout(function() {
+		                count($ngu)
+		            }, 30) // Tốc độ đếm số, số 1 là nhanh nhất
+		        }
+		    }
+			function fuckcount(ahihi){				
+				$(ahihi).data('count', parseInt($(ahihi).html(), 10));
+				$(ahihi).html('0');
+				count($(ahihi));
+			}
+			$.ajax({url: "count.php?x=member", success: function(result){
+			            $("#member-count").html(result);
+			           	fuckcount($("#member-count"));
+			}});
+			$.ajax({url: "count.php?x=doc", success: function(result){
+			            $("#doc-count").html(result);
+			            fuckcount($("#doc-count"));
+			}});
+			$.ajax({url: "count.php?x=download", success: function(result){
+			            $("#download-count").html(result);
+			        	fuckcount($("#download-count"));
+			}});
+		</script>
+		<div class="content">
+			<div class="col-xs-12 col-sm-8 col-md-9 main-left">
+				<div class="content-main-left">
+					<div class="row text-search" style="">
+					  <form action="timkiem.php" method="GET">
+					  <div class="col-xs-12">
+					    <div class="input-group">
+					    	
+						      <input name="q" type="text" class="form-control" placeholder="Tìm kiếm tài liệu...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default search" type="submit">
+						        	<i class="fa fa-search" aria-hidden="true"></i>
+						        </button>
+						      </span>	
+					      
+					    </div><!-- /input-group -->
+					  </div><!-- /.col-lg-6 -->
+					  </form>
+					</div>
+					<div class="col-xs-12">
+						<div class="col-xs-12 col-md-4"><h3 style="color: #D20901">*VỀ CHÚNG TÔI</h3></div>
+						<div class="col-xs-12 col-md-8 content2">
+							<p>WEBISTE CHIA SẺ TÀI LIỆU MIỄN PHÍ HÀNG ĐẦU VIỆT NAM.</p>
+							<p>KHO TÀI LIỆU KHỔNG LỒ.</p>
+							<p>ĐỘI NGŨ ADMIN TÀI NĂNG.</p>
+							<p>PHƯƠNG CHÂM: CHO ĐI LÀ NHẬN VỀ MÃI MÃI.</p>
+						</div>
+					</div>		
+				</div>
+					<div class="col-xs-12" style="margin-top: 40px;">
+						<div style="width: 100%;">
+							<div id="carousel-id" class="carousel slide col-xs-12 slideshow" data-ride="carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel-id" data-slide-to="1" class=""></li>
+									<li data-target="#carousel-id" data-slide-to="2" class=""></li>
+									<li data-target="#carousel-id" data-slide-to="3" class=""></li>
+									<li data-target="#carousel-id" data-slide-to="4" class=""></li>
+									<li data-target="#carousel-id" data-slide-to="5" class=""></li>
+									<li data-target="#carousel-id" data-slide-to="7" class=""></li>
+									<li data-target="#carousel-id" data-slide-to="8" class=""></li>
+								</ol>
+								<div class="carousel-inner">
+									<div class="item active">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh1.jpg" >
+										
+									</div>
+									<div class="item">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh2.jpg">
+									</div>
+									<div class="item ">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh3.jpg">
+									</div>
+									<div class="item">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh4.jpg">
+									</div>
+									<div class="item">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh5.jpg">
+									</div>
+									<div class="item">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh6.jpg">
+									</div>
+									<div class="item">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="images/anh9.jpg">
+									</div>
+									<!-- <div class="item">
+										<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt=" First slide" src="images/anh11.jpg">
+									</div> -->
+								</div>
+							<a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+							<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+						</div>
+					</div>
+					
+					<div class="content3" style="">
+						<div class="col-xs-12 col-lg-6">
+							<div class="panel panel-info" style="padding-bottom: 42px">
+								<div class="panel-heading"  style="background-color: #2970b8;color: white">
+									<h3 class="panel-title">Diễn đàn</h3>
+								</div>
+								<div class="panel-body">
+									<div class="group-tabs">
+	      							<!-- Nav tabs -->
+									    <ul class="nav nav-tabs" role="tablist" style="font-size: 12px">
+									        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Tài liệu nên tải</a></li>
+									        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Thành viên mới</a></li>
+									        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Thành viên tích cực</a></li>
+									    </ul>
+								      <!-- Tab panes -->
+									    <div class="tab-content">
+									        <div role="tabpanel" class="tab-pane active" id="home">
+									        	<h4 class="col-xs-12">5 TÀI LIỆU NÊN TẢI</h4>
+									        	<div id="suggest-doc">
+									        	<p>
+									        		<a href="" class="col-xs-8">Đề thi THPT Quốc gia môn toán 2017</a>
+									        		<span class="col-xs-4">Rate: 5</p>
+									        	<!-- </p> -->
+									        	<p>
+									        		<a href="" class="col-xs-8">Đề thi THPT Quốc gia môn toán 2017</a>
+									        		<span class="col-xs-4">Rate: 5</p>
+									        	<!-- </p> -->
+									        	<p>
+									        		<a href="" class="col-xs-8">Đề thi THPT Quốc gia môn t17</a>
+									        		<span class="col-xs-4">Rate: 5</p>
+									        	<!-- </p> -->
+									        	<p>
+									        		<a href="" class="col-xs-8">Đề thi THPT Quốc gia môn toán 2017</a>
+									        		<span class="col-xs-4">Rate: 5</p>
+									        	<!-- </p> -->
+									        	<p>
+									        		<a href="" class="col-xs-8">Đề thi THPT Quốc gia môn toán 2017</a>
+									        		<span class="col-xs-4">Rate: 5</p>
+									        	<!-- </p> -->
+									        	</div>
+									        </div>
+									        <div role="tabpanel" class="tab-pane" id="messages">
+									        	<h4 class="col-xs-12">5 THÀNH VIÊN MỚI NHẤT</h4>
+									        	<div id="new-member">
+									        	<p>
+									        		<a href="" class="col-xs-8">Nguyễn Ngọc Trung</a>
+									        		<span class="col-xs-4">16/06/1997</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Hoàng Mạnh Quân</a>
+									        		<span class="col-xs-4">12/09/1997</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Lê Trọng Chung</a>
+									        		<span class="col-xs-4">17/09/1997</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Lê Công Hậu</a>
+									        		<span class="col-xs-4">17/06/1997</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Hoàng Thế Anh</a>
+									        		<span class="col-xs-4">24/03/1997</p>
+									        	</p>
+									        	</div>
+									        </div>
+									        <div role="tabpanel" class="tab-pane" id="settings">
+									        	<h4 class="col-xs-12">5 THÀNH VIÊN TIÊU BIỂU</h4>
+									        	<div id="tichcuc">
+												<p>
+									        		<a href="" class="col-xs-8">Nguyễn Ngọc Trung</a>
+									        		<span class="col-xs-4">100 tài liệu</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Hoàng Mạnh Quân</a>
+									        		<span class="col-xs-4">100 tài liệu</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Lê Trọng Chung</a>
+									        		<span class="col-xs-4">100 tài liệu</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Lê Công Hậu</a>
+									        		<span class="col-xs-4">100 tài liệu</p>
+									        	</p>
+									        	<p>
+									        		<a href="" class="col-xs-8">Hoàng Thế Anh</a>
+									        		<span class="col-xs-4">100 tài liệu</p>
+									        	</p>
+									        	</div>
+									        </div>
+									    </div>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<script type="text/javascript">
+							$.ajax({url: "suggest-doc.php", success: function(result){
+									$("#suggest-doc").html(result);
+							}});
+							$.ajax({url: "new-member.php", success: function(result){
+									$("#new-member").html(result);
+							}});
+							$.ajax({url: "tichcuc.php", success: function(result){
+									$("#tichcuc").html(result);
+							}});
+						</script>
+						<div class="col-xs-12 col-lg-6">
+							<div class="panel panel-danger">
+								<div class="panel-heading" style="background-color: #2970b8;color: white">
+									<h3 class="panel-title"><i class="fa fa-envelope-o" aria-hidden="true" style="margin-right: 15px;"></i>Hòm thư góp ý</h3>
+								</div>
+								<div class="panel-body" style="font-size: 12px">
+									<div class="col-xs-6">
+		        						<p>Họ và tên*</p>
+		        					</div>
+							        <div class="col-xs-6">
+							        	<p>Email*</p>
+							        </div>
+							        <div class="col-xs-6">
+							        	<input type="text" name="" id="mss_fullname" class="form-control" required="required"  title="">
+							        </div>
+							        <div class="col-xs-6">
+							        	<input type="text" name="" id="mss_email" class="form-control"  required="required"  title="">
+							        </div>
+							        <div class="col-xs-12">
+							        	<p>Nội dung góp ý</p>
+							        </div>
+							        <div class="col-xs-10">
+							        	<textarea name="" id="mss_mss" class="form-control" rows="3" required="required" placeholder="Nội dung góp ý"></textarea>
+							        </div>
+							        <div class="col-xs-12" style="margin-top:20px;">
+							        	<button id="gopy" type="button" class="btn btn-primary">Gửi góp ý</button>
+							        	
+							        </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+					
+		</div>
+			<div class="col-xs-12 col-sm-4 col-md-3 main-right">
+				<div class="content-main-right">
+					<div class="col-xs-12">
+						<article class="panel panel-primary">
+							<div class="panel-heading">
+                				<h2 class="panel-title">Tài liệu mới nhất</h2>
+           					 </div>
+						</article>
+
+							<div id="new-doc">
+						<!-- <p class="col-xs-12"> -->
+							<p class="col-xs-12"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">16/06/1997</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-12"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">16/06/1997</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-12"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">16/06/1997</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-12"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">16/06/1997</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-12"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017-5</a><br>
+								<span class="info-document">16/06/1997</span></p>
+							
+						<!-- </p> -->
+						</div>
+						<script type="text/javascript">
+							$.ajax({url: "new-doc.php", success: function(result){
+							            $("#new-doc").html(result);
+							}});
+						</script>
+					</div>
+					<div class="col-xs-12">
+						<article class="panel panel-primary">
+							<div class="panel-heading">
+                				<h2 class="panel-title">Tài liệu nổi bật</h2>
+           					 </div>
+						</article>
+						<p class="col-xs-12">
+							<div id="featured-doc">
+							<p class="col-xs-9"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">Rate:5.0</span><span style="margin-left: 5px" class="info-document">Số lượt tải:1000	</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-9"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">Rate:5.0</span><span style="margin-left: 5px" class="info-document">Số lượt tải:1000	</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-9"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">Rate:5.0</span><span style="margin-left: 5px" class="info-document">Số lượt tải:1000	</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-9"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">Rate:5.0</span><span style="margin-left: 5px" class="info-document">Số lượt tải:1000	</span></p>
+							<hr style="clear: both;">
+							<p class="col-xs-9"><a href="chitiettailieu.html">Đề thi THPT Quốc gia 2017</a><br>
+								<span class="info-document">Rate:5.0</span><span style="margin-left: 5px" class="info-document">Số lượt tải:1000	</span></p>
+							</div>
+						</p>
+						<script type="text/javascript">
+							$.ajax({url: "featured-doc.php", success: function (result) {
+								$("#featured-doc").html(result);
+							}});
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div style="width: 100%">
+		<footer class="myfooter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-xs-12">
+						<h4 class="title-widget">MẠNG XÃ HỘI</h4>
+						<p>Các bạn có thể liên hệ với chúng tôi thông qua các trang mạng xã hội </p>
+						<ul class="social social-circle">
+							<li> <a href="https://www.facebook.com/" class="icoFacebook"><i class="fa fa-facebook"></i></a></li>
+							<li> <a href="https://twitter.com" class="icoTwitter"> <i class="fa fa-twitter"></i> </a> </li>
+							<li> <a href="https://www.instagram.com" class="icoGoogle"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
+							<li> <a href="https://www.youtube.com/" class="icoRss"> <i class="fa fa-youtube"></i> </a> </li>
+						</ul>
+					</div>
+					
+					<div class="col-sm-4 col-xs-12">
+						<h4 class="title-widget">Menu</h4>
+						<div class="category">
+							<a href="index.php" class="zoom">Trang chủ</a>
+							<a href="toanhoc.html" class="zoom">Toán học</a>
+							<a href="vatli.html" class="zoom">Vật lí</a>
+							<a href="hoahoc.html" class="zoom">Hóa học</a>
+							<a href="thithu.html" class="zoom">Thi thử</a>
+							<a href="info/info.html" class="zoom">Thông tin</a>
+						</div>
+					</div>
+				</div>
+				<hr>
+				
+				<div class="row text-center"> © 20171 - Designer NNT</div>
+			</div> <!-- ./container -->
+	    
+	    
+	    
+	    </footer>
+   
+	</div>
+	<script type="text/javascript">
+		$('#gopy').click(function(){
+	    	var datapost = {'fullname': $('#mss_fullname').val(), 
+				'email': $('#mss_email').val(), 
+	    		'mss':$('#mss_mss').val()};
+	    		$.ajax({type: "POST", url: 'message.php', data: datapost, success: function(result){
+		    		if (result == 1) {
+		    			alert('Góp ý của bạn đã được ghi nhận. Cảm ơn bạn đã góp ý!');
+		    			$('#mss_mss').val('');
+		    			$('#mss_email').val('');
+		    			$('#mss_fullname').val('');
+		    		}else if(result == 0){
+		   				alert('Vui lòng điền đầy đủ thông tin.');
+		      		}else{
+		      			alert('Rất tiếc máy chủ đã gặp lỗi.');
+		     			console.log(result);
+		       		}
+	      		}});
+	    });
+	</script>
+</body>
+
+<script>
+		var current_fs,next_fs,previous_fs; // fields set
+		var left,opacity,scale; //fieldset properties which we will animate
+		var animating; //flag to prevent quick multi-click glitches
+		var blank = "";
+		function validUserPassword(argument) {
+			var username = $('fieldset input:eq(0)').val();
+			var password = $('fieldset input:eq(1)').val();
+			var rpassword = $('fieldset input:eq(2)').val();
+			if(	"" ==  username|| 
+				"" == password ||
+				"" == rpassword ||
+				password.length < 6 ||
+				password.length < 6 ||
+				rpassword != password ){
+		 		return true;
+			}
+			return false;
+		 } 
+		 function validNameEmailBirth(argument) {
+		 	var fullName = $('fieldset:eq(1) input:eq(0)').val();
+		 	var email = $('fieldset:eq(1) input:eq(1)').val();
+		 	var birthday = $('fieldset:eq(1) input:eq(2)').val();
+		 	if(fullName == "" ||
+		 		email == ""	||
+		 		birthday ==""){
+		 		return true;
+		 	}
+		 	return false;
+		 }
+		$('.next').click(function(){
+			var fieldsetIndex = $("#msform fieldset").index($(this).parent());
+			if(fieldsetIndex == 0){
+			 	if(validUserPassword())
+					return false;
+			}
+			if(fieldsetIndex == 1){
+				if(validNameEmailBirth())
+					return false;
+				$('fieldset:eq(2) td:eq(0)').html($('fieldset input:eq(0)').val());
+				$('fieldset:eq(2) td:eq(1)').html($('fieldset:eq(1) input:eq(0)').val());
+				$('fieldset:eq(2) td:eq(2)').html($('fieldset:eq(1) input:eq(1)').val());
+				$('fieldset:eq(2) td:eq(3)').html($('fieldset:eq(1) input:eq(2)').val());
+			}
+		    if(animating) return false
+		    animating = true;
+		    current_fs = $(this).parent();
+		    next_fs = $(this).parent().next();
+		    //activate next step on progressbar using the index of next_fs
+		    $("#progressbar li").eq($("#msform fieldset").index(next_fs)).addClass("active");
+		    next_fs.show(); //show the next fieldset
+		    // hide the current field set with style
+		    current_fs.animate({opacity:0},{
+		        step:function(now,fx){
+		            //1. scale current_fs down to 80%, now = 0 (same as opacity = 0)
+		            scale = 1 - (1- now)*0.2;
+		            //2. bring next_fs from the right(50%)
+		            left = (now* 50)+ "%";
+		            //3. increase opacity of next_fs to 1 as it moves in
+		            opacity = 1 - now;
+		            current_fs.css({'transform':'scale('+scale+')'});
+		            next_fs.css({'left':left,'opacity':opacity});
+		        },
+		        duration:800,
+		        complete:function(){
+		            current_fs.hide();
+		            animating = false;
+		        },
+		        //this comes from the custom easing plugin
+		        easing: 'easeInOutBack'
+		    });
+		 
+		});
+		 
+		$('.previous').click(function(){
+		 
+		    if(animating) return false
+		    animating = true;
+		 
+		    current_fs = $(this).parent();
+		    previous_fs = $(this).parent().prev();
+		    $('#progressbar li').eq($("#msform fieldset").index(current_fs)).removeClass("active");
+		    previous_fs.show();
+		    //hide the current fieldset with style
+		    current_fs.animate({opacity: 0}, {
+		        step: function(now, mx) {
+		            //as the opacity of current_fs reduces to 0 - stored in "now"
+		            //1. scale previous_fs from 80% to 100%
+		            scale = 0.8 + (1 - now) * 0.2;
+		            //2. take current_fs to the right(50%) - from 0%
+		            left = ((1-now) * 50)+"%";
+		            //3. increase opacity of previous_fs to 1 as it moves in
+		            opacity = 1 - now;
+		            current_fs.css({'left': left});
+		            previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+		        },
+		        duration: 800,
+		        complete: function(){
+		            current_fs.hide();
+		            animating = false;
+		        },
+		        //this comes from the custom easing plugin
+		        easing: 'easeInOutBack'
+		    });
+		});
+		 
+		// $('.submit').click(function(){
+		//     return false;
+		// });
+		function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+	            reader.onload = function (e) {
+	                $('fieldset:eq(2) img')
+	                    .attr('src', e.target.result)
+	                    .width(80)
+	                    .height(80);
+	            };
+
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+	    // alert($('fieldset:eq(2) img').attr('src'));
+	</script>
+</html>
+<!-- https://codepen.io/atakan/pen/gqbIz -->

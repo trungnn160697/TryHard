@@ -1,0 +1,69 @@
+/*
+* @Author: ngoc trung
+* @Date:   2017-10-21 16:01:57
+* @Last Modified by:   ngoc trung
+* @Last Modified time: 2017-10-30 00:26:33
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	 box-sizing: border-box;
+}
+.header{
+	display: table;
+	width: 100%;
+}
+.logo{
+	/* width: 100%; */
+}
+#logo-bygtrym{
+	float:left;
+	height: 100px;
+	width: 100%;
+	
+}
+#title{
+}
+.log-sign{
+	line-height: 100px;
+	float:right;
+}
+.log-sign ul{
+	text-align: center;
+}
+.log-sign ul>li{
+	list-style:none;
+	
+}
+.log-sign ul>li >a{
+	float:left;
+	margin-left: 25px;
+	color: black;
+	font-size: 15px;
+	text-align: center;
+	float:right;
+}
+.log-sign ul>li >a:hover{
+	text-decoration: none;
+}
+.log-sign ul>li >a>span{
+	text-decoration: none;
+	margin-left:5px;
+}
+#log-sign{
+	/* display: none; */
+}
+#login{
+	margin-top:20px;
+	display: none;
+	
+}
+.dropdown-menu{
+	width: 50px;
+}
+a{
+	color:blue;
+}

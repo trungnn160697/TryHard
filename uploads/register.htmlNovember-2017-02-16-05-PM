@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Đăng kí</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		.ymd{
+			width: 20%;
+			display: inline;
+		}
+		.short{
+			display: inline;
+			width: 50%;
+		}
+		td{
+			min-width: 130px;
+		}
+		.field_name{
+			background-color: aliceblue;
+		}
+		p{
+			margin: 0px;
+		}
+		.form-control{
+			border-radius: 0px;
+		}
+		.unfloat{
+			float: unset;
+		}
+	</style>
+</head>
+<body>
+	<form action="confirm.html" method="POST" style="width: 45%;margin: 0 auto;" role="form" 　>
+		<!-- <legend>Register Form</legend> -->
+	
+		<div class="form-group" >
+				<table class="table table-hover">
+					<col class="field_name" />
+					<tbody>
+						<tr>
+							<td>Name</td>
+							<td><input type="text" name=""  class="form-control short" value=""  title=""></td>
+						</tr>
+						<tr>
+							<td>Name フリガナ</td>
+							<td><input type="text" name=""  class="form-control short" value=""  title=""></td>
+						</tr>
+						<tr>
+							<td><p>Email</p><span class="label label-danger">必須</span></td>
+							<td><input type="text" name=""  class="form-control" value="" required="required"  title=""></td>
+						</tr>
+						<tr>
+							<td>Confirm Email</td>
+							<td><input type="text" name=""  class="form-control" value="" required="required" title=""></td>
+						</tr>
+						<td><p>Gender</p><span class="label label-danger">必須</span></td>
+						<td>
+							<div class="radio">
+								<label>
+									<input type="radio" name="nam" id="inputNam" value="" required="required">
+									Nam
+								</label>
+								<label>
+									<input type="radio"  name="nam"  required="required">
+									Nữ
+								</label>
+							</div>
+						</td>
+						<tr>
+							<td>Username</td>
+							<td><input type="text" name=""  class="form-control" value="" required="required" title=""></td>
+						</tr>
+						<tr>
+							<td>
+								<span>Password</span>
+							</td>
+							<td>
+								<input type="password" name=""  class="form-control short" required="required" title=""><span style="margin-left: 5px;">半角英数８〜１６文字</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>Confirm Password</span>
+							</td>
+							<td>
+								<input type="password" name=""  class="form-control short" required="required" title="">
+							</td>
+						</tr>
+						<tr>
+							<td>Address</td>
+							<td><input type="text" name=""  class="form-control" value=""  title=""></td>
+						</tr>
+						<tr>
+							<td>Level Japan</td>
+							<td><select name="" id="input" class="form-control short" >
+								<option hidden >選択してください</option>
+								<option value="">N0</option>
+								<option value="">N1</option>
+								<option value="">N2</option>
+								<option value="">N3</option>
+								<option value="">N4</option>
+								<option value="">N5</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td>Birthday</td>
+							<td>
+								<select name="" id="input" class="form-control ymd" required="required">
+									<option hidden >ーーーーーーーーーー</option>
+									<option value="">1997</option>
+									<option value="">1998</option>
+								</select>
+								<span>年</span>
+								<select name="" id="input" class="form-control ymd" required="required">
+									<option hidden >ーーーーーーーーーー</option>
+									<option value="">６</option>
+									<option value="">７</option>
+								</select>
+								<span>月</span>
+								<select name="" id="input" class="form-control ymd" required="required">
+									<option hidden >ーーーーーーーーーー</option>
+									<option value="">17</option>
+									<option value="">18</option>
+								</select>
+								<span>日</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Favorite</td>
+							<td>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="f">
+										Football
+									</label>
+									<label>
+										<input type="checkbox" value="r">
+										Read book
+									</label>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+	
+		<div style="text-align: center;">
+			<input type="reset" value="Reset" class="btn btn-default  col-xs-3 unfloat">
+			<button type="submit" class="btn btn-primary col-xs-3 unfloat">Confirm</button>
+		</div>
+	</form>
+</body>
+</html>

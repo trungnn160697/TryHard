@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Giới thiệu nhóm BygTrym</title>
+	<style>
+		body {
+    margin: 0;
+    padding: 0;
+    background: #0e0e0e;
+}
+.text{
+    text-align: center;
+    color: #e7e7e7;
+    font-family: sans-serif,helvetica;
+    margin-top: 70px;
+    font-size: 250%;
+    font-weight: 400;
+    text-shadow:2px 1px 2px #eee;
+}
+.fly-in,.fly-in2,.fly-in3,.fly-in4{
+    position: absolute;
+    left: 50%;
+    top: 4  0%;
+    list-style: none;
+    transform: translateX(-50%) translateY(-50%);
+}
+.fly-in,.fly-in2,.fly-in3,.fly-in4 li {
+    display: inline-block;
+    margin-right: 30px;
+    font-family: sans-serif,helvetica;
+    font-weight: 300;
+    font-size: 38px;
+    color: #e7e7e7;
+    opacity: 1;
+    transition: all 2.8s cubic-bezier(0.6, -.005, 0.32, 1.75);
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li {
+    opacity: 0;
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(1) {
+    transform: translateX(150px) translateY(-170px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(2) {
+    transform: translateX(-210px) translateY(170px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(3) {
+    transform: translateX(20px) translateY(-100px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(4) {
+    transform: translateX(-100px) translateY(-20px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(5) {
+    transform: translateX(-70px) translateY(-200px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(6) {
+    transform: translateX(200px) translateY(70px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(7) {
+    transform: translateX(30px) translateY(200px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(8) {
+    transform: translateX(30px) translateY(-100px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(9) {
+    transform: translateX(100px) translateY(-170px); 
+}
+.fly-in.hidden,.fly-in2.hidden,.fly-in3.hidden,.fly-in4.hidden li:nth-child(10) {
+    transform: translateX(50px) translateY(50px); 
+}
+	</style>
+</head>
+<body>
+	
+<!--
+NOTE :- put above JQuery library in starting of 'HEAD' tag.
+Thanks to RINKANS !
+-->
+<!-- <h2 class="text">Fly-In-Animation</h2> -->
+
+    <ul class="fly-in hidden">
+        <li style="">Hello mọi người!!!</li><br>
+    </ul>
+     <ul class="fly-in2 hidden">
+        <li>Nhóm mình là nhóm BygTrym đến từ HEDSPI K60-C Đại học Bách Khoa Hà Nội</li>
+    </ul>
+     <ul class="fly-in3 hidden">
+        <li>Đây là project môn Cơ sở dữ liệu của nhóm mình</li>
+    </ul>
+    <ul class="fly-in4 hidden">
+         <li>Mong rằng webiste này sẽ giúp ích cho các bạn</li>
+    </ul>
+<script>$(window).load(function() {
+    setTimeout(function() {
+        $('.fly-in').removeClass('hidden');
+    }, 700);
+    setTimeout(function() {
+        $('.fly-in2').removeClass('hidden');
+    }, 1000);
+    setTimeout(function() {
+        $('.fly-in3').removeClass('hidden');
+    }, 1300);
+    setTimeout(function() {
+        $('.fly-in4').removeClass('hidden');
+    }, 1500);
+});</script>
+</body>
+</html>

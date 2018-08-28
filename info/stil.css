@@ -1,0 +1,680 @@
+
+
+body {
+	
+	margin:0;
+	padding:0;
+	font-size:13px;
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	color:#40403e;
+	
+}
+.anh-nhom{
+	margin-left:80px;
+	margin-top:20px;
+	width: 300px;height: 300px;
+	transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+}
+div#kontejner {
+	width:960px;
+	margin:0 auto;
+}
+div#desno {
+	background:none;
+}
+a {
+	outline:none;
+}
+div#levo {
+	
+}
+div#header {
+	width:914px;
+	margin:0 auto;
+	padding:46px 0 0 0;
+}
+div.clear {
+	clear:both;
+	width:100%;
+	height:1px;
+}
+div#conentwrapper {
+	padding:0px;
+	margin:0px;
+}
+div#zanav {
+	background:url("slike/leptir.png") top left no-repeat;
+	width:388px;
+	margin:0 10px 0 0;
+	padding:40px 0 0 0px;
+  float:right;
+}
+ul#navig{
+	display:inline;
+	padding:0;
+	margin:0px;
+	list-style:none;
+	
+}
+ul#navig li {
+	float:left;
+	position:relative;
+	display:inline;
+	padding:0;
+	margin:0px;
+}
+ul#navig li a{
+	display:block;
+	text-align:center;
+	height:46px;
+	width:92px;
+	line-height:40px;
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	text-decoration:none;
+	color:#fae7cb;
+	font-size:16px;
+
+}
+#dugmad li a:hover{
+	cursor: pointer;
+}
+ul#navig li a:hover {
+	background:url("slike/navig.png") bottom center no-repeat;
+	color:#e1b97f;
+}
+ul#navig li a.active {
+	background:url("slike/navig.png") bottom center no-repeat;
+	color:#f5f8fb;
+}
+div#contentbg{
+	position:relative;
+	margin:0;
+	padding:0 0 0 0;
+	background:url("slike/tabla.jpg") top center no-repeat;
+	height:405px;
+	padding:0px 40px;
+}
+div#contentwrapper {
+	width:914px;
+	padding:0 0 0 0;	
+	margin:0 auto;
+
+}
+div#pile {
+	margin-right:40px;
+	position:absolute;
+	bottom:-55px;
+	right:0;
+	width:327px;
+	height:137px;
+	z-index:80;
+}
+a.baloncic {
+	display:block;
+	text-decoration:none;
+	width:327px;
+	height:137px;
+	padding:0;
+	margin:0;
+	background:url("slike/kontakt.png") top left no-repeat;
+	cursor:pointer;
+}
+a.baloncic span {
+	display:none;
+	padding:0;
+	margin:0;
+}
+div.currentwrapper {
+	padding: 20px 0px 10px 0px;
+	float:left;
+	width:880px;
+}
+div.wide {
+	width:3656px;
+}
+div#crop {
+	width:880px;
+	height:360px;
+	overflow: hidden;
+}
+div.slikades {
+	width:430px;
+	height:315px;
+	margin:0px;
+	padding:0px;
+	float:right;
+}
+div.currentcontent {
+	width:427px;
+	height:315px;
+	margin:0px;
+	padding:0 3px 0 20px;
+	float:right;
+background:url("slike/pozin.jpg") no-repeat;}
+
+#kontakt{
+	margin:30px 90px;
+	width:695px;
+	 height:317px;
+	background:url("slike/pozkon.jpg") no-repeat;
+	 }
+div#kontakt h2{
+	 	padding-left: 17px;
+	 	padding-top:10px;
+	}
+div#kontakt p a{
+		  text-decoration: none;
+       color:#3a3a38; }
+div#kontakt p a:hover{
+	color:#f14895;
+	text-decoration: none;
+  }
+div#kontakt p {
+	text-align:justify;
+	line-height:18px;
+	font-family: georgia, times, sans-serif;
+	font-style:italic;
+  margin-left:17px;}
+div.currentcontent h2, div.slikades h2 {
+	font-size:30px;
+	letter-spacing:-2px;
+	color:#3a3a38;
+	padding:0px;
+	margin:0px;
+	font-weight:normal;
+	font-family:Arial, "Times New Roman", Times, serif;
+}
+div.currentcontent h6, div.slikades h6 {
+	font-size:10px;
+	font-weight:normal;
+	color:#3a3a38;
+	padding:0px;
+	margin:0px;
+	line-height:18px;
+}
+div.currentcontent p, div.slikades p {
+	text-align:justify;
+	line-height:18px;
+	font-family: georgia, times, sans-serif;
+margin-right:10px;}
+
+div.currentcontent p a {
+	text-decoration:none;
+	background:#4b4946;
+	color:#fff;
+	padding:0px 7px 1px 7px;
+	margin:0 3px 0 3px;
+}
+div.currentcontent h6 a {
+	text-decoration:none;
+	background:#4b4946;
+	color:#fff;
+	padding:0px 7px 1px 7px;
+	margin:0 3px 0 3px;
+}
+div.currentcontent h6 a:hover {
+	color: white;
+	text-decoration:none;
+	background:#333130;
+}
+div.currentcontent a:hover {
+	color: #f14895;
+	text-decoration:none;
+}
+
+div.currentcontent h3, div.slikades h3 {
+	font-size:15px;
+	color:#3a3a38;
+	padding:0px;
+	margin:0px;
+}
+div.currentcontent ul, div.slikades ul {
+	padding:10px 0 0 0;
+	margin:0;
+	list-style:none;
+}
+div.currentcontent ul li, div.slikades ul li {
+	display:block;
+	font-size:13px;
+	line-height:28px;
+	padding-left:25px;
+	background:url("slike/zvezda.gif") center left no-repeat;
+	margin-right:10px;
+}
+div.currentcontent ul li a {
+color:#3a3a38;
+text-decoration: none;
+}
+div#zastava {
+	margin-left:932px;
+	display:none;
+	width:19px;
+	height:154px;
+	position:absolute;
+	bottom:140px;
+	left:5px;
+	
+}
+div#zastava span {
+	display:none;
+}
+
+
+div#kutije {
+margin-left:240px;
+	bottom:-20px;
+	position:absolute;
+	width:400px;
+}
+div#kutije ul{
+margin:0px;
+padding:0px;
+list-style:none;}
+
+div#kutije li{
+float:left;
+}
+div#kutije li a{
+	display:block;
+	width:50px;
+	height:40px;
+	background:url("slike/dugmad.png")  no-repeat;
+	color:#efcb91;
+	font-size:11px;
+	text-align:center;
+	padding-left:0px;
+	line-height:40px;
+	text-decoration:none;
+}
+div#kutije li a:hover{
+background:url("slike/dugmad2.png")  no-repeat;
+}
+div#kutije li a.activetab {
+background:url("slike/dugmad2.png") no-repeat;
+}
+div#kutije a{
+padding-right:5px;
+}
+
+small {
+	font-size:9px;
+}
+div#podn {
+	width:260px;
+	margin:245px 5px 0 350px;
+	background: url("slike/poster.jpg") top left no-repeat;
+	height:265px;
+	padding:15px 20px 20px 20px;
+	position:relative;
+	
+}
+
+
+div#footer {
+	padding:35px 25px 15px 25px;
+	height:30px;
+	font-size:11px;
+}
+div#footer p {
+	text-align:center;
+}
+div#footer p a {
+	text-decoration:none;
+	padding:0px 7px 1px 7px;
+	margin:0 3px 0 3px;
+}
+img {
+	border:none;
+	padding:0;
+	margin:0;
+}
+div#pile em {
+	background: url("slike/balon.png") no-repeat;
+	width: 240px;
+	height: 64px;
+	position: absolute;
+	top: -90px;
+	left: 90px;
+	text-align: center;
+	font-style: normal;
+	z-index: 2000;
+	display: none;
+	color:#f9c064;
+}
+
+
+
+/*********** Za Fix IE6 ***********/
+* html div#conentwrapper {
+	margin-top:-15px;
+}
+* html div#levo {
+	background:none;
+}
+* html div.currentcontent {
+	padding:0 0 0 20px;
+}
+* html div#podn ul li a {
+	line-height:18px;
+	}
+ /*********** Za portfolio ***********/
+      #portfolio{
+      position:absolute;
+      width:880px;
+      height:365px;
+      margin: 2px 0 0 0;
+      padding:0;overflow:hidden;
+      }
+   
+      #portfolio dd{
+      position:absolute;
+      left:260px;
+      top:-455px;
+      width:358px;
+      height:363px;
+      margin:0;
+      padding:0;
+      background: url("slike/poz1.jpg")  no-repeat;
+      padding:10px;
+      }
+   
+      #portfolio dd h3{
+      	font:bold 15px Georgia, "Times New Roman", Times, serif;
+      	color:#3a3a38;
+      	margin-bottom:0;
+      	}
+   
+      #portfolio dd h4{
+      	font:bold 13px Georgia, "Times New Roman", Times, serif;
+      	color:#3a3a38;
+      	}
+      #portfolio h4 a{
+      	text-decoration: none;
+        color:#3a3a38; 
+        }
+      #portfolio h4 a:hover{
+				color:#f14895;
+				text-decoration: none;
+        }   
+      #portfolio dd p{
+      	font:11px Geneva, Arial, Helvetica, sans-serif;
+      	color:#3a3a38;
+      	}
+   
+      #portfolio dd img{
+      	display:block;
+      	margin:0 auto;
+      	}
+   
+      .dt{
+      	width:240px;
+      	height:65px;
+      	background:#686560;
+      	cursor:pointer;
+      	font:11px Geneva, Arial, Helvetica, sans-serif;
+      	color:#3a3a38;
+      	background: url("slike/pozl.jpg") no-repeat;
+      	}
+   
+      .dt img{
+      	border:1px solid #000;
+      	height:55px;
+      	width:55px;
+      	float:left;
+      	margin: 2px 0 0 2px;
+      	}
+   
+      .dt a{
+      	display:block;
+      	color:#fae7cb;
+      	font:bold 13px Georgia, "Times New Roman", Times, serif;
+      	padding-bottom:5px;
+      	text-decoration:none;
+      	}
+  
+      .dt.left{
+      	position:absolute;
+      	left:5px;
+      	}
+  
+      .dt.right{
+      	position:absolute;
+      	right:5px;
+      	background: url("slike/pozd.jpg")  no-repeat;
+				}
+
+
+/*Za kontakt formu - Thanks to Eric*/
+/* Copyright (c) 2009 Eric Martin - http://ericmmartin.com*/
+
+/* Overlay */
+#contact-overlay {
+background-color:#000; 
+cursor:wait;}
+
+/* Container */
+#contact-container {
+width:450px;
+font-family:'Trebuchet MS', Verdana, Arial;
+font-size:16px;
+text-align:left;
+}
+#contact-container .contact-content {
+background:url(kontakt/img/contact/sred.jpg) no-repeat;  
+color:#04476d; 
+height:40px;
+}
+#contact-container h1 {
+color:#04476d; 
+margin:0; 
+padding:0 0 6px 12px; 
+font-size:1.2em; 
+text-align:center;
+}
+#contact-container .contact-loading {
+position:absolute; 
+background:url(kontakt/img/contact/loading.gif) no-repeat; 
+z-index:8000; 
+height:22px; 
+width:126px; 
+margin:14px 0 0 170px; 
+padding:0;}
+#contact-container .contact-message {
+text-align:center;
+}
+#contact-container .contact-error {
+width:80%; 
+font-size:.8em; 
+background:#f6eaea; 
+border:2px solid #ccc; 
+font-size:0.8em; 
+font-weight:bold; 
+margin:0 auto; 
+padding:2px;
+}
+#contact-container br {
+clear:both;
+}
+#contact-container form {
+padding:0; 
+margin:0;
+}
+#contact-container label {
+clear:left; 
+display:block; 
+width:100px; 
+float:left; 
+text-align:right; 
+padding-right:4px; 
+font-weight:bold;
+}
+#contact-container .contact-input {
+font-family:'Trebuchet MS', Verdana, Arial; 
+float:left; 
+padding:2px; 
+margin:2px; 
+background:#d76300; 
+border:1px solid #fff; 
+width:250px;
+}
+#contact-container textarea {
+height:114px; 
+font-size:.9em;
+}
+#contact-container .contact-cc {
+font-size:.9em; 
+cursor:default;
+}
+#contact-container .contact-top {
+height:13px; 
+background:url(kontakt/img/contact/form_top.png) no-repeat; 
+padding:0; 
+margin:0;
+}
+#contact-container .contact-bottom {
+height:13px; 
+background:url(kontakt/img/contact/form_bottom.png) no-repeat; 
+font-size:.6em; 
+text-align:center;
+}
+#contact-container .contact-bottom a,
+#contact-container .contact-bottom a:link,
+#contact-container .contact-bottom a:active,
+#contact-container .contact-bottom a:visited {
+position:relative; 
+top:-1px; 
+text-decoration:none; 
+color:#666;
+}
+#contact-container .contact-bottom a:hover {
+color:#888;
+}
+#contact-container .contact-button {
+margin:4px 0 0 4px; 
+cursor:pointer; 
+height:24px; 
+border:0; 
+font-size:12px; 
+font-weight:bold; 
+color:#04476d; 
+text-align:center; 
+vertical-align:middle;
+}
+#contact-container .contact-send {
+width:100px; 
+background:url(kontakt/img/contact/send.png) no-repeat;
+margin-top:10px;
+}
+#contact-container .contact-cancel {
+width:100px; 
+background:url(kontakt/img/contact/cancel.png) no-repeat;
+margin-top:10px;
+}
+#contact-container a.modalCloseX,
+#contact-container a.modalCloseX:link,
+#contact-container a.modalCloseX:active,
+#contact-container a.modalCloseX:visited {
+text-decoration:none; 
+font-weight:bold; 
+font-size:1.2em; 
+position:absolute; 
+top:2px; 
+right:3px; 
+color:#999;
+}
+#contact-container a.modalCloseX:hover {
+	color:#9bb3b3;
+	}
+#jquery-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	width: 100%;
+	height: 500px;
+}
+#jquery-lightbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+	line-height: 0;
+}
+#jquery-lightbox a img { border: none; }
+#lightbox-container-image-box {
+	position: relative;
+	background-color: #ececec;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+}
+#lightbox-container-image { padding: 10px; }
+#lightbox-loading {
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	height: 25%;
+	width: 100%;
+	text-align: center;
+	line-height: 0;
+}
+#lightbox-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+#lightbox-container-image-box > #lightbox-nav { left: 0; }
+#lightbox-nav a { outline: none;}
+#lightbox-nav-btnPrev { 
+	left: 0; 
+	float: left;
+	width: 70px;
+}
+#lightbox-nav-btnNext { 
+	right: 0; 
+	float: right;
+	width: 70px;
+}
+#lightbox-container-image-data-box {
+	font-size: 11px;
+	font-family:"lucida sans Unicode", "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	background-color: #ececec;
+	margin: 0 auto;
+	line-height: 1.4em;
+	overflow: auto;
+	width: 100%;
+	padding: 0 10px 0;
+}
+#lightbox-container-image-data {
+	padding: 0 10px; 
+	color: #666; 
+}
+#lightbox-container-image-data #lightbox-image-details { 
+	width: 70%; 
+	float: left; 
+	text-align: left; 
+}	
+#lightbox-image-details-caption { font-weight: bold; }
+#lightbox-image-details-currentNumber {
+	display: block; 
+	clear: left; 
+	padding-bottom: 1.0em;	
+}			
+#lightbox-secNav-btnClose {
+	position:absolute;
+	display:block;
+	width:30px;
+	height:30px;
+	top:-9px;
+	right:-9px;
+	z-index:1000;
+
+}

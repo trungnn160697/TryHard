@@ -1,0 +1,52 @@
+/*
+* @Author: ngoc trung
+* @Date:   2017-10-17 00:14:11
+* @Last Modified by:   ngoc trung
+* @Last Modified time: 2017-11-07 10:30:49
+*/
+*{
+	margin:0;
+	padding:0;
+}
+.main-quanli{
+	width: 95%;
+	margin: 50px auto;
+	padding-bottom: 90px;
+}
+#button_delete{
+	width: 25px;
+	height: 25px;
+	background: #3399FF;
+	color:white;
+	border: 0;
+}
+#button_reply{
+	width: 25px;
+	height: 25px;
+	background: #6666FF;
+	text-align: center;
+	margin-left: 5px;
+	color:white;
+	border: 0;
+}
+.text-search-quanli{
+	width: 40%;
+	margin: 0 auto;
+	
+}
+.button_text_search:hover{
+	background-color: #FF3333;
+	border-color: #FF3333;
+	color:white;
+}
+.pagination>li>a, .pagination>li>span{
+	margin-left:5px;
+	margin-right: 5px;
+}
+.pagination>li>a:hover{
+	background: #FF3333;
+	color:white;
+}
+a:hover{
+	text-decoration: none;
+}

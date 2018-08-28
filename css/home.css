@@ -1,0 +1,97 @@
+/*
+* @Author: ngoc trung
+* @Date:   2017-10-21 23:08:11
+* @Last Modified by:   ngoc trung
+* @Last Modified time: 2017-10-24 23:28:25
+*/
+.main-wapper{
+	width: 100%;
+	height: 250px;
+	background-color: #CC6600;
+	
+}
+.main{
+	width: 100%;
+	display: table;
+}
+.content1{
+	width: 98%;
+	margin: 0 auto;
+	color:white;
+	font-size:30px;
+}
+.number{
+	margin-top:50px;
+	text-align: center;
+}
+.content{
+	margin-top:50px;
+}
+.main-right a{
+	color: black;
+}
+.main-right p{
+	font-size:16px;
+}
+.main-right a:hover{
+	color: blue;
+	text-decoration: none;
+}
+.rate{
+	text-align: center;
+}
+.info-document{
+	font-size:12px;
+}
+.content-main-left{
+	width: 95%;
+	margin: 0 auto;
+}
+.content2{
+	color:#D20901;
+	font-size:16px;
+}
+.content3{
+	margin-top:10px;
+	padding-top: 25px;
+	clear: both;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+	height: 400px;
+	width: 100%;
+}
+.slideshow{
+	margin: 0 auto;
+	width: 100%;
+	height: 400px;
+}
+.text-search{
+	width: 70%;margin:0px auto;clear: both;
+	padding-bottom: 50px;
+}
+.tab-content{
+	font-size:12px;
+}
+ 
+@-webkit-keyframes shine {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+@media(max-width: 650px){
+	.content1{
+		width: 100%;
+		color:white;
+		font-size:25px;
+	}
+}
+@media(max-width: 550px){
+	.content1{
+		width: 100%;
+		color:white;
+		font-size:20px;
+	}
+}
